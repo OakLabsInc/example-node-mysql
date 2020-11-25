@@ -55,7 +55,7 @@ docker-compose up --build
 
 ## Importing containers into remote Docker install
 
-On your target docker imstall with Docker running , you can perform this command to install the containers into a new docker install.
+On your target docker install with Docker running , you can perform this command to install the containers into a new docker install.
 
 ``` bash
 gunzip -c example-node-mysql.tar.gz | docker load
