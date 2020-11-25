@@ -1,0 +1,48 @@
+version: "3.2"
+services:
+  nodejs:
+    build: 
+      context: .
+    image: oaklabs/example-node-mysql:latest
+    networks:
+      - frontend
+      - backend
+    environment:
+      - MYSQL_HOST=example-mysql
+      - MYSQL_USER=root
+      - MYSQL_PASS=root
+      - MYSQL_DB=example_db
+    volumes:
+      - ./www/:/var/www/html/
+    ports:
+      - "30001:8005"
+    container_name: example-node-app
+  mysql:
+    image: mysql:5.7
+    networks:
+      - backend
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=exampleuser
+      - MYSQL_PASSWORD=examplepass 
+      - MYSQL_DATABASE=example_db
+    container_name: example-mysql
+    volumes:
+      - ./data/db:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:4.7
+    depends_on:
+      - mysql
+    networks:
+      - backend
+    ports:
+      - "30002:80"
+    environment:
+      - PMA_HOST=example-mysql
+      - PMA_PORT= 3306
+    volumes:
+      - /sessions
+    container_name: example-phpmyadmin
+networks:
+  frontend:
+  backend:

@@ -1,0 +1,16 @@
+{
+  "name": "example-node-mysql",
+  "version": "1.0.0",
+  "description": "An example project that demonstrates creation of a docker node/mysql project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Richard Joffray",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql": "^2.17.1"
+  }
+}
