@@ -45,6 +45,14 @@ Using docker the resulting containers can be archived and transported to another
 docker image save oaklabs/example-node-mysql mysql node phpmyadmin/phpmyadmin | gzip -c > example-node-mysql.tar.gz
 ```
 
+## Copy docker-compose.yml
+
+Copy the docker-compose.yml to the remote docker Install and run
+
+``` bash
+docker-compose up --build
+```
+
 ## Importing containers into remote Docker install
 
 On your target docker imstall with Docker running , you can perform this command to install the containers into a new docker install.
