@@ -8,12 +8,6 @@ This project can be used as an example of starting multiple containers that depe
 npm install
 ```
 
-## Build docker containers
-
-``` bash
-docker-compose up --build
-```
-
 ## Populate mysql database
 
 * Create a place for the MySQL data to go in your local project folder
@@ -28,6 +22,12 @@ mkdir -p ./data/db
 * Go to the `SQL` tab
 * Paste contents of the `init.sql` file
 * Click `Go`
+
+## Build docker containers
+
+``` bash
+docker-compose up --build
+```
 
 ## View database output
 
