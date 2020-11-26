@@ -13,6 +13,11 @@ npm install
 ``` bash
 mkdir -p ./data/db
 ```
+## Build docker containers
+
+``` bash
+docker-compose up --build
+```
 
 ## Populate mysql database
 
